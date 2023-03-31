@@ -1,11 +1,5 @@
 version: 2.1
 
-workflows:
-  version: 2
-  build:
-    jobs:
-      - build
-
 jobs:
   build:
     working_directory: ~/mern-starter
@@ -40,3 +34,9 @@ jobs:
           prefix: coverage
       - store_test_results:
           path: test-results.xml
+
+workflows:
+  build:
+    jobs:
+      - build
+
